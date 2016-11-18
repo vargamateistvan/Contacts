@@ -17,4 +17,25 @@
 
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.get('/', 'ContactController.index')
+//SHOW
+Route.get('/contacts/:id', 'ContactController.show')
+//CREATE
+Route.get('/contacts/create', 'ContactController.create').middleware('auth')
+Route.post('/contacts/create', 'ContactController.doCreate').middleware('auth')
+//EDIT
+Route.get('/contacts/:id/edit', 'ContactController.edit').middleware('auth')
+Route.post('/contacts/:id/edit', 'ContactController.doEdit').middleware('auth')
+//DELETE
+Route.get('/contacts/:id/delete', 'ContactController.doDelete').middleware('auth')
+//SEARCH
+Route.get('/contacts', 'ContactController.search')
+
+//REGISTER
+Route.get('/register', 'UserController.register')
+Route.post('/register', 'UserController.doRegister')
+//LOGIN
+Route.get('/login', 'UserController.login')
+Route.post('/login', 'UserController.doLogin')
+//LOGOUT
+Route.get('/logout', 'UserController.doLogout')

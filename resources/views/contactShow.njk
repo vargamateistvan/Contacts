@@ -1,0 +1,60 @@
+{% extends "layout" %}
+
+{% block content %}
+<table class="table">
+	<tr>
+	    <th colspan="2">
+			<h2>{{ contact.name }} - {{ contact.category.name }}</h2>
+		</th>
+	</tr>
+	<tr>
+        <td>Email:</td>
+        <td><p>{{ contact.email }}</p></td>
+	</tr>	
+    <tr>
+        <td>Telefon:</td>
+        <td><p>{{ contact.phone }}</p></td>
+	</tr>
+    <tr>
+        <td>Szolgáltatási terület:</td>
+        <td><p>{{ contact.area }}</p></td>
+	</tr>
+    <tr>
+        <td>Elérhető:</td>
+        <td><p>{{ contact.avaiable }}</p></td>
+	</tr>
+</table>
+
+{% if (contact.user_id == currentUser.id) %}
+<a href="/contacts/{{ contact.id }}/edit" class="btn btn-default">Szerkeszt</a>
+<a href="/contacts/{{ contact.id }}/delete" class="btn btn-danger">Töröl</a>
+{% endif %}
+
+<table class="table table-hover ">
+	<tr>
+		<th colspan="2">
+			<h2>Kommentek</h2>
+	    </th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td><p>Olcsó és megbizható</p></td>
+	</tr>
+    {% for com in comments %}
+        {% if com.contact_id == contact.id %}
+            <p>{{ com.contact_id }} - {{contact.id }}</p>
+            <tr>
+                <td>{{ com.user_id }}</td>
+                <td>{{ com.comment }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+
+<p>Új komment :
+	<textarea class="form-control" rows="3" id="textArea"></textarea>
+</p>
+<button type="reset" class="btn btn-default"><a href="/">Vissza</a></button>
+<button type="submit" class="btn btn-primary">Komment küldése</button>
+
+{% endblock %}
