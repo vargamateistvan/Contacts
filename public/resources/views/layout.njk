@@ -33,6 +33,7 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
           <ul class="nav navbar-nav">
+              <li><a href="/contacts">Névjegyek böngészése</a></li>
               {% if currentUser %}
               <li><a href="/contacts/create">Névjegy létrehozása</a></li>
               {% endif %}
@@ -41,6 +42,7 @@
           <ul class="nav navbar-nav navbar-right">
             {% if currentUser %}
               <li class="navbar-text">Üdv, {{ currentUser.username }}!</li>
+              <li><a href="/users/{{ currentUser.id }}">Saját-/Kedvencek névjegyek</a></li>
               <li><a href="/logout">Kilépés</a></li>
             {% else %}
               <li><a href="/login">Belépés</a></li>

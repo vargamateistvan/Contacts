@@ -12,7 +12,7 @@ class Contact extends Lucid {
     }
 
     comment() {
-        return this.hasMany('App/Model/Comment.js');
+        return this.hasMany('App/Model/Comment');
     }
 }
 

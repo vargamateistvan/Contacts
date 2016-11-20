@@ -8,7 +8,11 @@ class User extends Lucid {
   }
 
   contacts() {
-    return this.hasMany('App/Model/Contact.js')
+    return this.hasMany('App/Model/Contact')
+  }
+
+  favourites() {
+    return this.hasMany('App/Model/Favourite')
   }
 }
 

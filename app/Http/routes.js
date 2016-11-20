@@ -30,6 +30,8 @@ Route.post('/contacts/:id/edit', 'ContactController.doEdit').middleware('auth')
 Route.get('/contacts/:id/delete', 'ContactController.doDelete').middleware('auth')
 //SEARCH
 Route.get('/contacts', 'ContactController.search')
+//ADD Favourties
+Route.get('/contacts/:id/favourite', 'ContactController.addFavourites').middleware('auth')
 
 //REGISTER
 Route.get('/register', 'UserController.register')
@@ -39,3 +41,11 @@ Route.get('/login', 'UserController.login')
 Route.post('/login', 'UserController.doLogin')
 //LOGOUT
 Route.get('/logout', 'UserController.doLogout')
+
+//COMMENT
+Route.post('/contacts/:id', 'CommentController.doCreate').middleware('auth')
+
+//FAVOURITES
+Route.get('/users/:id', 'UserController.show').middleware('auth')
+//DELETE Favourties
+Route.get('/users/:id/delete', 'ContactController.deleteFavourites').middleware('auth')
