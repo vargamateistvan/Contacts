@@ -72,22 +72,22 @@ A https://github.com/vargamateistvan/Contacts/tree/master/design oldalon HTML fo
     - Kommentelés
 
 2.3 Végpontok
-- GET / főoldal
-- GET /login bejelentkező oldal
-- POST /login bejelentkező adatok felküldése
-- GET /register regisztrációs oldal
-- POST /register regisztrációs adatok felküldése
-- GET /logout kijelentkező oldal
-- GET /contacts koktéllista oldal
-- GET /contacts/create új koktél felvétele
-- POST /contacts/create új koktél felvételéhez szükséges adatok felküldése
-- GET /contacts/:id koktél adatok
-- POST /contacts/:id új megjegyzés felvitele
-- GET /contacts/:id/delete koktél recept törlése
-- GET /contacts/:id/edit koktél módosítása
-- POST /contacts/:id/edit koktél módosítása, adatok felküldése
-- GET /users/:id saját oldal
-- GET /users/:id Kedvencek törlése
+- GET /                       főoldal
+- GET /login                  bejelentkező oldal
+- POST /login                 bejelentkező adatok felküldése
+- GET /register               regisztrációs oldal
+- POST /register              regisztrációs adatok felküldése
+- GET /logout                 kijelentkező oldal
+- GET /contacts               névjegyek oldal
+- GET /contacts/create        új névjegy felvétele
+- POST /contacts/create       új névjegy felvételéhez szükséges adatok felküldése
+- GET /contacts/:id           névjegy adatok
+- POST /contacts/:id          új megjegyzés felvitele
+- GET /contacts/:id/delete    névjegy törlése
+- GET /contacts/:id/edit      névjegy módosítása
+- POST /contacts/:id/edit     névjegy módosítása, adatok felküldése
+- GET /users/:id              saját oldal
+- GET /users/:id              kedvencek törlése
 
 2.4 Modellek
 ![MODEL](https://github.com/vargamateistvan/Contacts/blob/master/doc/images/model.png)
