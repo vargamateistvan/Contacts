@@ -37,7 +37,7 @@
     - Kedvencekhez adás
     - Kedvencekből törlés
     - Komment írása névjegyhez
-    ![Esetdiagram](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/esetdiagram.png)
+    ![Esetdiagram](https://github.com/vargamateistvan/Contacts/blob/master/doc/images/esetdiagram.png)
 
 Design terv
 Főoldal
