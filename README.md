@@ -41,22 +41,22 @@
 
 Design terv
 Főoldal
-![Főoldal](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/main.png)
+![Főoldal](https://github.com/vargamateistvan/Contacts/blob/master/doc/images/main.png)
 Regisztráció
-![Regisztráció](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/singin.png)
+![Regisztráció](https://github.com/vargamateistvan/Contacts/blob/master/doc/images/singin.png)
 Bejelentkezés
-![Bejelentkezés](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/singup.png)
+![Bejelentkezés](https://github.com/vargamateistvan/Contacts/blob/master/doc/images/singup.png)
 Felhasználó
-![Felhasználó](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/user.png)
+![Felhasználó](https://github.com/vargamateistvan/Contacts/blob/master/doc/images/user.png)
 Névjegy
-![Névjegy](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/contact.png)
+![Névjegy](https://github.com/vargamateistvan/Contacts/blob/master/doc/images/contact.png)
 
 A https://github.com/vargamateistvan/Contacts/tree/master/design oldalon HTML formátumban is megtalálhatóak.
 
 2.Tervezés
 
 2.1 Komponens diagram
-![MVC](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/mvc.png)
+![MVC](https://github.com/vargamateistvan/Contacts/blob/master/doc/images/mvc.png)
 
 2.2 Oldaltérkép
 - Publikus
@@ -90,7 +90,7 @@ A https://github.com/vargamateistvan/Contacts/tree/master/design oldalon HTML fo
 - GET /users/:id Kedvencek törlése
 
 2.4 Modellek
-![MODEL](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/model.png)
+![MODEL](https://github.com/vargamateistvan/Contacts/blob/master/doc/images/model.png)
 
 3.Implementáció
 
