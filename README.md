@@ -37,26 +37,26 @@
     - Kedvencekhez adás
     - Kedvencekből törlés
     - Komment írása névjegyhez
-    ![Esetdiagram](https://github.com/vargamateistvan/Contacts/blob/master/images/esetdiagram.png)
+    ![Esetdiagram](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/esetdiagram.png)
 
 Design terv
 Főoldal
-![Főoldal](https://github.com/vargamateistvan/Contacts/blob/master/images/main.png)
+![Főoldal](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/main.png)
 Regisztráció
-![Regisztráció](https://github.com/vargamateistvan/Contacts/blob/master/images/singin.png)
+![Regisztráció](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/singin.png)
 Bejelentkezés
-![Bejelentkezés](https://github.com/vargamateistvan/Contacts/blob/master/images/singup.png)
+![Bejelentkezés](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/singup.png)
 Felhasználó
-![Felhasználó](https://github.com/vargamateistvan/Contacts/blob/master/images/user.png)
+![Felhasználó](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/user.png)
 Névjegy
-![Névjegy](https://github.com/vargamateistvan/Contacts/blob/master/images/contact.png)
+![Névjegy](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/contact.png)
 
 A https://github.com/vargamateistvan/Contacts/tree/master/design oldalon HTML formátumban is megtalálhatóak.
 
 2.Tervezés
 
 2.1 Komponens diagram
-![MVC](https://github.com/vargamateistvan/Contacts/blob/master/images/mvc.png)
+![MVC](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/mvc.png)
 
 2.2 Oldaltérkép
 - Publikus
@@ -90,7 +90,7 @@ A https://github.com/vargamateistvan/Contacts/tree/master/design oldalon HTML fo
 - GET /users/:id Kedvencek törlése
 
 2.4 Modellek
-![MODEL](https://github.com/vargamateistvan/Contacts/blob/master/images/model.png)
+![MODEL](https://github.com/vargamateistvan/Contacts/blob/master/docs/images/model.png)
 
 3.Implementáció
 
@@ -117,5 +117,3 @@ A https://github.com/vargamateistvan/Contacts/tree/master/design oldalon HTML fo
   - contactSearch.njk
   - contactShow.njk
   - userShow.njk
-  
-
