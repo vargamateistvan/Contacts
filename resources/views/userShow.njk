@@ -1,0 +1,49 @@
+{% extends "layout" %}
+
+{% block content %}
+<table class="table">
+	<tr>
+		<th colspan="5">
+			<h2>Saját névjegyek</h2>
+		</th>
+	</tr>
+	  {% for category in categories %}
+			{% for contact in category.topContacts %}
+				{% if currentUser.id == contact.user_id %}
+				<tr>
+					<td>
+						<a href="/contacts/{{ contact.id }}">{{ contact.name }}</a> - {{ category.name }}
+					</td>
+					<td>
+						<a href="/contacts/{{ contact.id }}/edit" class="btn btn-default">Szerkeszt</a>
+					</td>
+					<td>
+						<a href="/contacts/{{ contact.id }}/delete" class="btn btn-danger">Töröl</a>
+					</td>
+				</tr>
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+</table>
+
+<table class="table">
+	<tr>
+		<th colspan="1">
+			<h2>Kedvenc névjegyek</h2>
+		</th>
+	</tr>
+			{% for fav in favourites %}
+				{% if currentUser.id == fav.user_id %}
+					<tr>
+						<td>
+							<a href="/contacts/{{ fav.contact_id }}">{{ fav.contact_id }} {{ contact.name }}</a>
+						</td>
+						<td>
+							<a href="/users/{{ currentUser.id }}/delete" class="btn btn-danger">Töröl</a>
+						</td>
+					</tr>
+				{% endif %}
+			{% endfor %}	
+</table>
+
+{% endblock %}

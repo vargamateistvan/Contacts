@@ -1,0 +1,53 @@
+{% extends "layout" %}
+
+{% block content %}
+<table class="table">
+	<tr>
+	    <th colspan="2">
+			<h2>{{ contact.name }} - {{ contact.category.name }}</h2>
+		</th>
+	</tr>
+	<tr>
+        <td>Email:</td>
+        <td><p>{{ contact.email }}</p></td>
+	</tr>	
+    <tr>
+        <td>Telefon:</td>
+        <td><p>{{ contact.phone }}</p></td>
+	</tr>
+    <tr>
+        <td>Szolgáltatási terület:</td>
+        <td><p>{{ contact.area }}</p></td>
+	</tr>
+    <tr>
+        <td>Elérhetõ:</td>
+        <td><p>{{ contact.avaiable }}</p></td>
+	</tr>
+</table>
+
+<button type="submit" class="btn btn-primary"><a href="/contacts/:id/favourite">Kedvencekhez adás</a></button>
+
+<table class="table table-hover ">
+	<tr>
+		<th colspan="2">
+			<h2>Kommentek</h2>
+	    </th>
+	</tr>
+    {% for com in comment %}
+        {% if com.contact_id == contact.id %}
+            <p>{{ com.contact_id }} - {{contact.id }}</p>
+            <tr>
+                <td>{{ com.user_id }}</td>
+                <td>{{ com.comment }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+
+<p>Új komment :
+	<textarea class="form-control" rows="3" id="textArea"></textarea>
+</p>
+<button type="reset" class="btn btn-default"><a href="/">Vissza</a></button>
+<button type="submit" class="btn btn-primary"><a href="/contacts/:id">Komment küldése</a></button>
+
+{% endblock %}

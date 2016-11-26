@@ -1,0 +1,86 @@
+{% extends 'layout' %}
+
+{% block title %}Névjegyek böngészése{% endblock %}
+{% block content %}
+  <h1>Névjegyek böngészése</h1>
+  <form action="/contacts" method="GET">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputContactName">Név</label>
+          <input type="text" class="form-control" placeholder="Név" id="inputContactName" name="contactName" value="{{ filters.contactName }}">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputCategory">Kategória</label>
+          <select class="form-control" id="inputCategory" name="category">
+            <option value="">--</option>
+            {% for category in categories %}
+            {% if filters.category == category.id %}
+            <option value="{{ category.id }}" selected>{{ category.name }}</option>
+            {% else %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputCreatedBy">Beküldte</label>
+          <select class="form-control" id="inputCreatedBy" name="createdBy">
+            <option value="">--</option>
+            {% for user in users %}
+            {% if filters.createdBy == user.id %}
+            <option value="{{ user.id }}" selected>{{ user.username }}</option>
+            {% else %}
+            <option value="{{ user.id }}">{{ user.username }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>&nbsp;</label>
+          <button class="btn btn-block btn-primary" type="submit">Szûrés</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <h2>Találatok ({{ contacts.total }})</h2>
+  {% for contactBatch in contacts.data | batch(3) %}
+  <div class="row">
+    {% for contact in contactBatch %}
+    <div class="col-md-4">
+      <a class="result-item" href="/contacts/{{ contact.id }}">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <strong>{{ contact.name }}</strong><br>
+            beküldte <em>{{ contact.user.username }}</em>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  Nincs a szûrésnek megfelelõ névjegy.
+  {% endfor %}
+  {% if contacts.lastPage > 1 %}
+  <div class="text-center">
+    <ul class="pagination">
+      {% for page in range(1, contacts.lastPage + 1) %}
+      {% if page == contacts.currentPage %}
+      <li class="active">
+        <a href="/contacts?p={{ page }}&amp;contactName={{ filters.contactName }}&amp;category={{ filters.category }}&amp;createdBy={{ filters.createdBy }}">{{ page }}</a>
+      </li>
+      {% else %}
+      <li><a href="/contacts?p={{ page }}&amp;contactName={{ filters.contactName }}&amp;category={{ filters.category }}&amp;createdBy={{ filters.createdBy }}">{{ page }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+{% endblock %}

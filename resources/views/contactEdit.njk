@@ -1,14 +1,14 @@
 {% extends "layout" %} {% block content %}
-<h2>√öj N√©vjegy</h2>
+<h2>NÈvjegy mÛdosÌt·sa</h2>
 
-{% if old('errors') %}
+{% if contact.errors %}
 <div class="panel panel-danger">
     <div class="panel-heading">
-        <h3 class="panel-title">Hib√°k</h3>
+        <h3 class="panel-title">Hib·k</h3>
     </div>
     <div class="panel-body">
         <ul>
-            {% for error in old('errors') %}
+            {% for error in contact.errors %}
             <li>{{ error.message }}</li>
             {% endfor %}
         </ul>
@@ -16,51 +16,52 @@
 </div>
 {% endif %}
 
+
 <form class="form-horizontal" method="post">
 
     {{ csrfField }}
 
     <div class="form-group">
-        <label for="name" class="col-lg-2 control-label">N√©v</label>
+        <label for="name" class="col-lg-2 control-label">NÈv</label>
         <div class="col-lg-10">
-            <input type="text" class="form-control" id="name" name="name" placeholder="Recept neve" value="{{old('name')}}">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Recept neve" value="{{ contact.name }}">
         </div>
     </div>
     <div class="form-group">
         <label for="email" class="col-lg-2 control-label">Email</label>
         <div class="col-lg-10">
-            <textarea class="form-control" rows="3" id="email" name="email">{{old('email')}}</textarea>
+            <textarea class="form-control" rows="3" id="email" name="email">{{ contact.email }}</textarea>
             <span class="help-block">Email</span>
         </div>
     </div>
     <div class="form-group">
         <label for="phone" class="col-lg-2 control-label">Telefon</label>
         <div class="col-lg-10">
-            <textarea class="form-control" rows="3" id="phone" name="phone">{{old('phone')}}</textarea>
+            <textarea class="form-control" rows="3" id="phone" name="phone">{{ contact.phone }}</textarea>
             <span class="help-block">Telefon</span>
         </div>
     </div>
     <div class="form-group">
-        <label for="area" class="col-lg-2 control-label">Szolg√°ltat√°si ter√ºlet</label>
+        <label for="area" class="col-lg-2 control-label">Szolg·ltat·si ter¸let</label>
         <div class="col-lg-10">
-            <textarea class="form-control" rows="3" id="area" name="area">{{old('area')}}</textarea>
-            <span class="help-block">Szolg√°ltat√°si ter√ºlet</span>
+            <textarea class="form-control" rows="3" id="area" name="area">{{ contact.area }}</textarea>
+            <span class="help-block">Szolg·ltat·si ter¸let</span>
         </div>
     </div>
     <div class="form-group">
-        <label for="avaiable" class="col-lg-2 control-label">El√©rhet≈ë</label>
+        <label for="avaiable" class="col-lg-2 control-label">ElÈrhetı</label>
         <div class="col-lg-10">
-            <textarea class="form-control" rows="3" id="avaiable" name="avaiable">{{old('avaiable')}}</textarea>
-            <span class="help-block">El√©rhet≈ë</span>
+            <textarea class="form-control" rows="3" id="avaiable" name="avaiable">{{ contact.avaiable }}</textarea>
+            <span class="help-block">ElÈrhetı</span>
         </div>
     </div>
     <div class="form-group">
-        <label for="category_id" class="col-lg-2 control-label">Kateg√≥ria</label>
+        <label for="category_id" class="col-lg-2 control-label">KategÛria</label>
         <div class="col-lg-10">
             <select class="form-control" id="category_id" name="category_id">
         {% for category in categories %}
         <option value="{{ category.id }}"
-          {% if category.id == old('category_id') %}
+          {% if category.id == contact.category_id %}
           selected
           {% endif %}
         >{{ category.name }}</option>
@@ -70,8 +71,8 @@
     </div>
     <div class="form-group">
         <div class="col-lg-10 col-lg-offset-2">
-            <button type="reset" class="btn btn-default">M√©gsem</button>
-            <button type="submit" class="btn btn-primary">K√ºld√©s</button>
+            <button type="reset" class="btn btn-default">MÈgsem</button>
+            <button type="submit" class="btn btn-primary">K¸ldÈs</button>
         </div>
     </div>
 </form>
