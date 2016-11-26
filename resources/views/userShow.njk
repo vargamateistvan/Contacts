@@ -1,10 +1,10 @@
-{% extends "layout" %}
+ï»¿{% extends "layout" %}
 
 {% block content %}
 <table class="table">
 	<tr>
 		<th colspan="5">
-			<h2>Saját névjegyek</h2>
+			<h2>SajÃ¡t nÃ©vjegyek</h2>
 		</th>
 	</tr>
 	  {% for category in categories %}
@@ -18,7 +18,7 @@
 						<a href="/contacts/{{ contact.id }}/edit" class="btn btn-default">Szerkeszt</a>
 					</td>
 					<td>
-						<a href="/contacts/{{ contact.id }}/delete" class="btn btn-danger">Töröl</a>
+						<a href="/contacts/{{ contact.id }}/delete" class="btn btn-danger">TÃ¶rÃ¶l</a>
 					</td>
 				</tr>
 			{% endif %}
@@ -29,7 +29,7 @@
 <table class="table">
 	<tr>
 		<th colspan="1">
-			<h2>Kedvenc névjegyek</h2>
+			<h2>Kedvenc nÃ©vjegyek</h2>
 		</th>
 	</tr>
 			{% for fav in favourites %}
@@ -39,7 +39,7 @@
 							<a href="/contacts/{{ fav.contact_id }}">{{ fav.contact_id }} {{ contact.name }}</a>
 						</td>
 						<td>
-							<a href="/users/{{ currentUser.id }}/delete" class="btn btn-danger">Töröl</a>
+							<a href="/users/{{ currentUser.id }}/delete" class="btn btn-danger">TÃ¶rÃ¶l</a>
 						</td>
 					</tr>
 				{% endif %}

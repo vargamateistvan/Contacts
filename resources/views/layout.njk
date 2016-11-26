@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title>Contacts :: Main</title>
+	<title>Contacts</title>
 
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" rel="stylesheet">
@@ -33,20 +33,20 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
           <ul class="nav navbar-nav">
-              <li><a href="/contacts">Névjegyek böngészése</a></li>
+              <li><a href="/contacts">NÃ©vjegyek bÃ¶ngÃ©szÃ©se</a></li>
               {% if currentUser %}
-              <li><a href="/contacts/create">Névjegy létrehozása</a></li>
+              <li><a href="/contacts/create">NÃ©vjegy lÃ©trehozÃ¡sa</a></li>
               {% endif %}
           </ul>
           
           <ul class="nav navbar-nav navbar-right">
             {% if currentUser %}
-              <li class="navbar-text">Üdv, {{ currentUser.username }}!</li>
-              <li><a href="/users/{{ currentUser.id }}">Saját-/Kedvencek névjegyek</a></li>
-              <li><a href="/logout">Kilépés</a></li>
+              <li class="navbar-text">Ãœdv, {{ currentUser.username }}!</li>
+              <li><a href="/users/{{ currentUser.id }}">SajÃ¡t-/Kedvencek nÃ©vjegyek</a></li>
+              <li><a href="/logout">KilÃ©pÃ©s</a></li>
             {% else %}
-              <li><a href="/login">Belépés</a></li>
-              <li><a href="/register">Regisztráció</a></li>
+              <li><a href="/login">BelÃ©pÃ©s</a></li>
+              <li><a href="/register">RegisztrÃ¡ciÃ³</a></li>
             {% endif %}
           </ul>
           </div>

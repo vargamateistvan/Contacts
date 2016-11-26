@@ -167,6 +167,7 @@ class ContactController {
         const contact = yield Contact.find(id);
         
         favourite.contact_id = '2';
+        //favourite.contact_id = contact.user_id;
         favourite.user_id = request.currentUser.id;
         const fav = yield Favourite.create(favourite);
 

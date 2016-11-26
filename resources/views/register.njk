@@ -1,12 +1,12 @@
-{% extends "layout" %}
+Ôªø{% extends "layout" %}
 
 {% block content %}
-<h2>Regisztr·ciÛ</h2>
+<h2>Regisztr√°ci√≥</h2>
 
 {% if old('errors') %}
 <div class="panel panel-danger">
   <div class="panel-heading">
-    <h3 class="panel-title">Hib·k</h3>
+    <h3 class="panel-title">Hib√°k</h3>
   </div>
   <div class="panel-body">
     <ul>
@@ -24,9 +24,9 @@
   {{ csrfField }}
 
   <div class="form-group">
-    <label for="username" class="col-lg-2 control-label">Felhaszn·lÛnÈv</label>
+    <label for="username" class="col-lg-2 control-label">Felhaszn√°l√≥n√©v</label>
     <div class="col-lg-10">
-      <input type="text" class="form-control" id="username" name="username" placeholder="Felhaszn·lÛnÈv" value="{{old('username')}}">
+      <input type="text" class="form-control" id="username" name="username" placeholder="Felhaszn√°l√≥n√©v" value="{{old('username')}}">
     </div>
   </div>
   <div class="form-group">
@@ -36,21 +36,21 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="password" class="col-lg-2 control-label">JelszÛ</label>
+    <label for="password" class="col-lg-2 control-label">Jelsz√≥</label>
     <div class="col-lg-10">
-      <input type="password" class="form-control" id="password" name="password" placeholder="JelszÛ" value="">
+      <input type="password" class="form-control" id="password" name="password" placeholder="Jelsz√≥" value="">
     </div>
   </div>
   <div class="form-group">
-    <label for="password_confirm" class="col-lg-2 control-label">JelszÛ</label>
+    <label for="password_confirm" class="col-lg-2 control-label">Jelsz√≥</label>
     <div class="col-lg-10">
-      <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="JelszÛ" value="">
+      <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Jelsz√≥" value="">
     </div>
   </div>
   <div class="form-group">
     <div class="col-lg-10 col-lg-offset-2">
-      <button type="reset" class="btn btn-default">MÈgsem</button>
-      <button type="submit" class="btn btn-primary">K¸ldÈs</button>
+      <button type="reset" class="btn btn-default">M√©gsem</button>
+      <button type="submit" class="btn btn-primary">K√ºld√©s</button>
     </div>
   </div>
 </form>

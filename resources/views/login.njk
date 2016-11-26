@@ -1,12 +1,12 @@
-{% extends "layout" %}
+ï»¿{% extends "layout" %}
 
 {% block content %}
-<h2>Belépés</h2>
+<h2>BelÃ©pÃ©s</h2>
 
 {% if old('errors') %}
 <div class="panel panel-danger">
   <div class="panel-heading">
-    <h3 class="panel-title">Hibák</h3>
+    <h3 class="panel-title">HibÃ¡k</h3>
   </div>
   <div class="panel-body">
     <ul>
@@ -30,15 +30,15 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="password" class="col-lg-2 control-label">Jelszó</label>
+    <label for="password" class="col-lg-2 control-label">JelszÃ³</label>
     <div class="col-lg-10">
-      <input type="password" class="form-control" id="password" name="password" placeholder="Jelszó" value="">
+      <input type="password" class="form-control" id="password" name="password" placeholder="JelszÃ³" value="">
     </div>
   </div>
   <div class="form-group">
     <div class="col-lg-10 col-lg-offset-2">
-      <button type="reset" class="btn btn-default">Mégsem</button>
-      <button type="submit" class="btn btn-primary">Küldés</button>
+      <button type="reset" class="btn btn-default">MÃ©gsem</button>
+      <button type="submit" class="btn btn-primary">BelÃ©pÃ©s</button>
     </div>
   </div>
 </form>

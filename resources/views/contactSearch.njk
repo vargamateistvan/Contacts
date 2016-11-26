@@ -1,19 +1,19 @@
-{% extends 'layout' %}
+ï»¿{% extends 'layout' %}
 
-{% block title %}Névjegyek böngészése{% endblock %}
+{% block title %}NÃ©vjegyek bÃ¶ngÃ©szÃ©se{% endblock %}
 {% block content %}
-  <h1>Névjegyek böngészése</h1>
+  <h1>NÃ©vjegyek bÃ¶ngÃ©szÃ©se</h1>
   <form action="/contacts" method="GET">
     <div class="row">
       <div class="col-md-3">
         <div class="form-group">
-          <label for="inputContactName">Név</label>
-          <input type="text" class="form-control" placeholder="Név" id="inputContactName" name="contactName" value="{{ filters.contactName }}">
+          <label for="inputContactName">NÃ©v</label>
+          <input type="text" class="form-control" placeholder="NÃ©v" id="inputContactName" name="contactName" value="{{ filters.contactName }}">
         </div>
       </div>
       <div class="col-md-3">
         <div class="form-group">
-          <label for="inputCategory">Kategória</label>
+          <label for="inputCategory">KategÃ³ria</label>
           <select class="form-control" id="inputCategory" name="category">
             <option value="">--</option>
             {% for category in categories %}
@@ -28,7 +28,7 @@
       </div>
       <div class="col-md-3">
         <div class="form-group">
-          <label for="inputCreatedBy">Beküldte</label>
+          <label for="inputCreatedBy">BekÃ¼ldte</label>
           <select class="form-control" id="inputCreatedBy" name="createdBy">
             <option value="">--</option>
             {% for user in users %}
@@ -44,12 +44,12 @@
       <div class="col-md-3">
         <div class="form-group">
           <label>&nbsp;</label>
-          <button class="btn btn-block btn-primary" type="submit">Szûrés</button>
+          <button class="btn btn-block btn-primary" type="submit">SzÅ±rÃ©s</button>
         </div>
       </div>
     </div>
   </form>
-  <h2>Találatok ({{ contacts.total }})</h2>
+  <h2>TalÃ¡latok ({{ contacts.total }})</h2>
   {% for contactBatch in contacts.data | batch(3) %}
   <div class="row">
     {% for contact in contactBatch %}
@@ -58,7 +58,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <strong>{{ contact.name }}</strong><br>
-            beküldte <em>{{ contact.user.username }}</em>
+            bekÃ¼ldte <em>{{ contact.user.username }}</em>
           </div>
         </div>
       </a>
@@ -66,7 +66,7 @@
     {% endfor %}
   </div>
   {% else %}
-  Nincs a szûrésnek megfelelõ névjegy.
+  Nincs a szÅ±rÃ©snek megfelelÅ‘ nÃ©vjegy.
   {% endfor %}
   {% if contacts.lastPage > 1 %}
   <div class="text-center">

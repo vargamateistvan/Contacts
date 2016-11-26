@@ -1,10 +1,10 @@
-{% extends "layout" %} {% block content %}
-<h2>Új Névjegy</h2>
+ï»¿{% extends "layout" %} {% block content %}
+<h2>Ãšj NÃ©vjegy</h2>
 
 {% if old('errors') %}
 <div class="panel panel-danger">
     <div class="panel-heading">
-        <h3 class="panel-title">Hibák</h3>
+        <h3 class="panel-title">HibÃ¡k</h3>
     </div>
     <div class="panel-body">
         <ul>
@@ -21,7 +21,7 @@
     {{ csrfField }}
 
     <div class="form-group">
-        <label for="name" class="col-lg-2 control-label">Név</label>
+        <label for="name" class="col-lg-2 control-label">NÃ©v</label>
         <div class="col-lg-10">
             <input type="text" class="form-control" id="name" name="name" placeholder="Recept neve" value="{{old('name')}}">
         </div>
@@ -41,21 +41,21 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="area" class="col-lg-2 control-label">Szolgáltatási terület</label>
+        <label for="area" class="col-lg-2 control-label">SzolgÃ¡ltatÃ¡si terÃ¼let</label>
         <div class="col-lg-10">
             <textarea class="form-control" rows="3" id="area" name="area">{{old('area')}}</textarea>
-            <span class="help-block">Szolgáltatási terület</span>
+            <span class="help-block">SzolgÃ¡ltatÃ¡si terÃ¼let</span>
         </div>
     </div>
     <div class="form-group">
-        <label for="avaiable" class="col-lg-2 control-label">Elérhetõ</label>
+        <label for="avaiable" class="col-lg-2 control-label">ElÃ©rhetÅ‘</label>
         <div class="col-lg-10">
             <textarea class="form-control" rows="3" id="avaiable" name="avaiable">{{old('avaiable')}}</textarea>
-            <span class="help-block">Elérhetõ</span>
+            <span class="help-block">ElÃ©rhetÅ‘</span>
         </div>
     </div>
     <div class="form-group">
-        <label for="category_id" class="col-lg-2 control-label">Kategória</label>
+        <label for="category_id" class="col-lg-2 control-label">KategÃ³ria</label>
         <div class="col-lg-10">
             <select class="form-control" id="category_id" name="category_id">
         {% for category in categories %}
@@ -70,8 +70,8 @@
     </div>
     <div class="form-group">
         <div class="col-lg-10 col-lg-offset-2">
-            <button type="reset" class="btn btn-default">Mégsem</button>
-            <button type="submit" class="btn btn-primary">Küldés</button>
+            <button type="reset" class="btn btn-default">MÃ©gsem</button>
+            <button type="submit" class="btn btn-primary">KÃ¼ldÃ©s</button>
         </div>
     </div>
 </form>

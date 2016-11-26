@@ -1,4 +1,4 @@
-{% extends "layout" %}
+ï»¿{% extends "layout" %}
 
 {% block content %}
 <table class="table">
@@ -16,16 +16,16 @@
         <td><p>{{ contact.phone }}</p></td>
 	</tr>
     <tr>
-        <td>Szolgáltatási terület:</td>
+        <td>SzolgÃ¡ltatÃ¡si terÃ¼let:</td>
         <td><p>{{ contact.area }}</p></td>
 	</tr>
     <tr>
-        <td>Elérhetõ:</td>
+        <td>ElÃ©rhetÅ‘:</td>
         <td><p>{{ contact.avaiable }}</p></td>
 	</tr>
 </table>
 
-<button type="submit" class="btn btn-primary"><a href="/contacts/:id/favourite">Kedvencekhez adás</a></button>
+<button type="submit" class="btn btn-primary"><a href="/contacts/:id/favourite">Kedvencekhez adÃ¡s</a></button>
 
 <table class="table table-hover ">
 	<tr>
@@ -44,10 +44,10 @@
     {% endfor %}
 </table>
 
-<p>Új komment :
+<p>Ãšj komment :
 	<textarea class="form-control" rows="3" id="textArea"></textarea>
 </p>
 <button type="reset" class="btn btn-default"><a href="/">Vissza</a></button>
-<button type="submit" class="btn btn-primary"><a href="/contacts/:id">Komment küldése</a></button>
+<button type="submit" class="btn btn-primary"><a href="/contacts/:id">Komment kÃ¼ldÃ©se</a></button>
 
 {% endblock %}
