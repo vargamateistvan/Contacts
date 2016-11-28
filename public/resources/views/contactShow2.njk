@@ -22,13 +22,12 @@
     <tr>
         <td>Elérhető:</td>
         <td><p>{{ contact.avaiable }} asdsadsa</p></td>
-	</tr>  
-</table>
-
-<button type="submit" class="btn btn-primary"><a href="/contacts/{{ contact.id }}/favourite">Kedvencekhez adás</a></button>
-
-<table class="table table-hover ">
-	<tr>
+	</tr>
+    <tr>
+        <td><button type="submit" class="btn btn-primary"><a href="/contacts/{{ contact.id }}/favourite">Kedvencekhez adás</a></button></td>
+        <td></td>
+    </tr>
+    <tr>
 		<th colspan="2">
 			<h2>Kommentek</h2>
 	    </th>
@@ -42,12 +41,21 @@
             </tr>
         {% endif %}
     {% endfor %}
+    {% if currentUser.id != 0 %}
+    <tr>
+        <td colspan="2">
+            <p>Új komment</p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><textarea name="comment" id="comment" class="form-control" rows="3" id="textArea"></textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="reset" class="btn btn-default"><a href="/">Vissza</a></button>
+            <button type="submit" class="btn btn-primary"><a href="/contacts/{{ contact.id }}/comment">Komment küldése</a></button>
+        </td>
+    </tr>
+    {% endif %}
 </table>
-{% if currentUser.id != 0 %}
-    <p>Új komment :
-        <textarea name="comment" id="comment" class="form-control" rows="3" id="textArea"></textarea>
-    </p>
-    <button type="reset" class="btn btn-default"><a href="/">Vissza</a></button>
-    <button type="submit" class="btn btn-primary"><a href="/contacts/{{ contact.id }}/comment">Komment küldése</a></button>
-{% endif %}
 {% endblock %}

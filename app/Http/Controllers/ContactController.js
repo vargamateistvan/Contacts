@@ -21,16 +21,6 @@ class ContactController {
         })
     }
 
-    *show(request, response) {
-        const id = request.param('id');
-        const contact = yield Contact.find(id);
-        yield contact.related('category').load();
-
-        yield response.sendView('contactShow', {
-            contact: contact.toJSON()
-        })
-    }
-
     *create(request, response) {
         const categories = yield Category.all()
         yield response.sendView('contactCreate', {
@@ -161,13 +151,29 @@ class ContactController {
         })
     }
 
+    *comment(request, response) {
+        const comment = request.except('_csrf');
+        const id = request.param('id');   
+        const contact = yield Contact.find(id);
+        
+        //comment.contact_id = '2';
+        comment.contact_id = contact.user_id;
+        comment.user_id = request.currentUser.id;
+        comment.comment = request.comment;
+        const com = yield Comment.create(comment);
+
+        yield com.save(comment)
+        response.redirect('back')
+    }
+
     *addFavourites(request, response) {
         const favourite = request.except('_csrf');
         const id = request.param('id');   
         const contact = yield Contact.find(id);
         
-        favourite.contact_id = '2';
-        //favourite.contact_id = contact.user_id;
+        //favourite.contact_id = '1';
+
+        favourite.contact_id = request.contact.user_id;
         favourite.user_id = request.currentUser.id;
         const fav = yield Favourite.create(favourite);
 
@@ -176,12 +182,30 @@ class ContactController {
     }
 
     *deleteFavourites(request, response) {
+        const favourites = yield Favourite.all();
         const id = request.param('id');
         const favourite = yield Favourite.find(id);
-
+/*
+        for(let fav in favourites) {
+            if(fav.id = request.id) {
+                yield favourite.delete()
+            }
+        }
+*/
         yield favourite.delete()
         response.redirect('back')
     }
+
+     *show(request, response) {
+        const id = request.param('id');
+        const contact = yield Contact.find(id);
+        yield contact.related('category').load();
+
+        yield response.sendView('contactShow', {
+            contact: contact.toJSON()
+        })
+    }
+
 }
 
 module.exports = ContactController

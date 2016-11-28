@@ -18,8 +18,6 @@
 const Route = use('Route')
 
 Route.get('/', 'ContactController.index')
-//SHOW
-Route.get('/contacts/:id', 'ContactController.show')
 //CREATE
 Route.get('/contacts/create', 'ContactController.create').middleware('auth')
 Route.post('/contacts/create', 'ContactController.doCreate').middleware('auth')
@@ -31,7 +29,15 @@ Route.get('/contacts/:id/delete', 'ContactController.doDelete').middleware('auth
 //SEARCH
 Route.get('/contacts', 'ContactController.search')
 //ADD Favourties
-Route.get('/contacts/:id/favourite', 'ContactController.addFavourites').middleware('auth')
+Route.post('/contacts/:id/favourite', 'ContactController.addFavourites').middleware('auth')
+
+//COMMENT
+Route.post('/contacts/:id/comment', 'ContactController.comment').middleware('auth')
+
+//FAVOURITES
+Route.get('/users/:id', 'UserController.show').middleware('auth')
+//DELETE Favourties
+Route.get('/users/:id/delete', 'ContactController.deleteFavourites').middleware('auth')
 
 //REGISTER
 Route.get('/register', 'UserController.register')
@@ -42,10 +48,6 @@ Route.post('/login', 'UserController.doLogin')
 //LOGOUT
 Route.get('/logout', 'UserController.doLogout')
 
-//COMMENT
-Route.post('/contacts/:id', 'CommentController.doCreate').middleware('auth')
+//SHOW
+Route.get('/contacts/:id', 'ContactController.show')
 
-//FAVOURITES
-Route.get('/users/:id', 'UserController.show').middleware('auth')
-//DELETE Favourties
-Route.get('/users/:id/delete', 'ContactController.deleteFavourites').middleware('auth')
