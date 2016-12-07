@@ -29,15 +29,17 @@ Route.get('/contacts/:id/delete', 'ContactController.doDelete').middleware('auth
 //SEARCH
 Route.get('/contacts', 'ContactController.search')
 //ADD Favourties
-Route.post('/contacts/:id/favourite', 'ContactController.addFavourites').middleware('auth')
-
+Route.get('/contacts/:id/favourite', 'ContactController.addFavourites').middleware('auth')
 //COMMENT
 Route.post('/contacts/:id/comment', 'ContactController.comment').middleware('auth')
 
-//FAVOURITES
-Route.get('/users/:id', 'UserController.show').middleware('auth')
+//SHOW
+Route.get('/contacts/:id', 'ContactController.show')
+
 //DELETE Favourties
 Route.get('/users/:id/delete', 'ContactController.deleteFavourites').middleware('auth')
+//FAVOURITES
+Route.get('/users/:id', 'UserController.show').middleware('auth')
 
 //REGISTER
 Route.get('/register', 'UserController.register')
@@ -47,7 +49,4 @@ Route.get('/login', 'UserController.login')
 Route.post('/login', 'UserController.doLogin')
 //LOGOUT
 Route.get('/logout', 'UserController.doLogout')
-
-//SHOW
-Route.get('/contacts/:id', 'ContactController.show')
 

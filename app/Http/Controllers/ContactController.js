@@ -152,9 +152,8 @@ class ContactController {
     }
 
     *comment(request, response) {
-        const comment = request.except('_csrf');
-        const id = request.param('id');   
-        const contact = yield Contact.find(id);
+        const comment = request.except('_csrf'); 
+        const contact = yield Contact.find('id');
         
         //comment.contact_id = '2';
         comment.contact_id = contact.user_id;
@@ -167,13 +166,12 @@ class ContactController {
     }
 
     *addFavourites(request, response) {
-        const favourite = request.except('_csrf');
-        const id = request.param('id');   
-        const contact = yield Contact.find(id);
+        const favourite = request.except('_csrf'); 
+        const contact = yield Contact.find('id');
         
         //favourite.contact_id = '1';
 
-        favourite.contact_id = request.contact.user_id;
+        favourite.contact_id = contact.user_id;
         favourite.user_id = request.currentUser.id;
         const fav = yield Favourite.create(favourite);
 
@@ -185,13 +183,7 @@ class ContactController {
         const favourites = yield Favourite.all();
         const id = request.param('id');
         const favourite = yield Favourite.find(id);
-/*
-        for(let fav in favourites) {
-            if(fav.id = request.id) {
-                yield favourite.delete()
-            }
-        }
-*/
+
         yield favourite.delete()
         response.redirect('back')
     }
