@@ -92,9 +92,7 @@ A https://github.com/vargamateistvan/Contacts/tree/master/design oldalon HTML fo
 2.4 Modellek
 ![MODEL](https://github.com/vargamateistvan/Contacts/blob/master/doc/images/model.png)
 
-3.Implementáció
-
-[Adonis.js](http://www.adonisjs.com/)
+2.5 MVC
 
 - Modellek
   - Category.js
@@ -103,9 +101,7 @@ A https://github.com/vargamateistvan/Contacts/tree/master/design oldalon HTML fo
   - Favourites.js
   - User.js
 - Controllerek
-  - CommentController.js
   - ContactController.js
-  - FavouritesController.js
   - UserController.js
 - Nézetek
   - layout.njk
@@ -117,3 +113,32 @@ A https://github.com/vargamateistvan/Contacts/tree/master/design oldalon HTML fo
   - contactSearch.njk
   - contactShow.njk
   - userShow.njk
+
+3.Implementáció
+
+- [Adonis.js](http://www.adonisjs.com/)
+- Böngésző
+- Telepítés
+  1. Kód letöltése
+    
+      a. ZIP letöltése
+
+      b. horvathgyozo/alkfejl-recept-1 klónozása
+
+      c. horvathgyozo/alkfejl-recept-1 forkolása és a saját repo klónozása
+
+  2. `npm install`
+  3. `.env.example` fájl átnevezése `.env`-re
+  4. `npm run dev` paranccsal futtatni
+  5. `localhost:3333` megnyitása
+  6. Express admin
+
+      a. `node_modules\.bin\admin config/express-admin`
+
+      b. Első futtatáskor a paraméterek beállítása
+
+          1. `sqlite` adatbázis
+
+          2. 4444-es port pl.
+
+          3. username és password beállítása
