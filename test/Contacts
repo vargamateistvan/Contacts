@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="registration.html">registration</a></td></tr>
+<tr><td><a href="login_logout.html">login_logout</a></td></tr>
+<tr><td><a href="login.html">login</a></td></tr>
+<tr><td><a href="create.html">create</a></td></tr>
+<tr><td><a href="edit.html">edit</a></td></tr>
+<tr><td><a href="delete.html">delete</a></td></tr>
+<tr><td><a href="logout.html">logout</a></td></tr>
+<tr><td><a href="wrong_create.html">wrong_create</a></td></tr>
+<tr><td><a href="delete_logout.html">delete_logout</a></td></tr>
+</tbody></table>
+</body>
+</html>
