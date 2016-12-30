@@ -193,9 +193,13 @@ class ContactController {
         const contact = yield Contact.find(id);
         yield contact.related('category').load();
 
-        yield response.sendView('contactShow', {
+        yield response.sendView('contactShow2', {
             contact: contact.toJSON()
         })
+    }
+
+    *ajaxDelete(request, response) {
+        response.notFound('No Contact');
     }
 
 }

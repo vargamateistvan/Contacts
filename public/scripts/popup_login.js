@@ -1,4 +1,4 @@
-console.log("sad")
+console.log(0)
 
 $('#btnLogin').on('click', function (e) {
     e.preventDefault()

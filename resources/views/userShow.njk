@@ -1,4 +1,8 @@
-﻿{% extends "layout" %}
+{% extends "layout" %}
+
+{% block scripts %}
+	<script src="/scripts/delete.js"></script>
+{% endblock %}
 
 {% block content %}
 <table class="table">
@@ -36,10 +40,10 @@
 				{% if currentUser.id == fav.user_id %}
 					<tr>
 						<td>
-							<a href="/contacts/{{ fav.contact_id }}">{{ fav.contact_id }} {{ contact.name }}</a>
+							<a href="/contacts/{{ fav.contact_id }}">{{ fav.contact_id }} {{ fav.contact.name }}</a>
 						</td>
 						<td>
-							<a href="/users/{{ currentUser.id }}/delete" class="btn btn-danger">Töröl</a>
+							<a id="btnDelete" href="/users/{{ currentUser.id }}/delete" class="btn btn-danger">Töröl</a>
 						</td>
 					</tr>
 				{% endif %}
