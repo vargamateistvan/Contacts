@@ -1,7 +1,12 @@
 {% extends "layout" %}
 
+{% block scripts %}
+	<script src="/scripts/delete.js"></script>
+{% endblock %}
+
 {% block content %}
 <table class="table">
+    {{ csrfField | safe }}
 	<tr>
 	    <th colspan="2">
 			<h2>{{ contact.name }} - {{ contact.category.name }}</h2>
@@ -24,9 +29,30 @@
         <td><p>{{ contact.avaiable }} asdsadsa</p></td>
 	</tr>
     <tr>
-        <td><button type="submit" class="btn btn-primary"><a href="/contacts/{{ contact.id }}/favourite">Kedvencekhez adás</a></button></td>
-        <td></td>
+        <td><a href="/contacts/{{ contact.id }}/edit" class="btn btn-default">Szerkeszt</a></td>
+        <td><a id="btnDelete" href="/contacts/{{ contact.id }}/delete" class="btn btn-danger">Töröl</a></td>
     </tr>
+    <tr>
+        <td><button type="submit" class="btn btn-primary"><a href="/contacts/{{ contact.id }}/favourite">Kedvencekhez adás</a></button></td>
+        <td></td>   
+    </tr>
+    <tr>
+		<td>
+			<div class="modal fade confirm-modal" tabindex="-1" role="dialog">
+				<div class="modal-dialog modal-sm" role="document">
+					<div class="modal-content">
+						<div class="modal-body">
+							Biztosan törölni szeretnéd?
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-success modal-ok" data-dismiss="modal">OK</button>
+							<button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">Mégse</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</td>
+	</tr>
     <tr>
 		<th colspan="2">
 			<h2>Kommentek</h2>
@@ -58,4 +84,5 @@
     </tr>
     {% endif %}
 </table>
+<span class="help-block"></span>
 {% endblock %}

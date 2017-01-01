@@ -13,9 +13,6 @@ function ajaxDelete(url) {
 }
 
 function my_confirm(str) {
-  // return Promise.resolve(
-  //   confirm(str)
-  // )
   let _resolve, _reject
 
   const $modal = $('.confirm-modal')

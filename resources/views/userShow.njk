@@ -1,8 +1,4 @@
-{% extends "layout" %}
-
-{% block scripts %}
-	<script src="/scripts/delete.js"></script>
-{% endblock %}
+{% extends "layout" %} 
 
 {% block content %}
 <table class="table">
@@ -11,9 +7,9 @@
 			<h2>Saját névjegyek</h2>
 		</th>
 	</tr>
-	  {% for category in categories %}
-			{% for contact in category.topContacts %}
-				{% if currentUser.id == contact.user_id %}
+	{% for category in categories %} 
+		{% for contact in category.topContacts %} 
+			{% if currentUser.id == contact.user_id %}
 				<tr>
 					<td>
 						<a href="/contacts/{{ contact.id }}">{{ contact.name }}</a> - {{ category.name }}
@@ -25,8 +21,8 @@
 						<a href="/contacts/{{ contact.id }}/delete" class="btn btn-danger">Töröl</a>
 					</td>
 				</tr>
-			{% endif %}
-		{% endfor %}
+			{% endif %} 
+		{% endfor %} 
 	{% endfor %}
 </table>
 
@@ -36,18 +32,18 @@
 			<h2>Kedvenc névjegyek</h2>
 		</th>
 	</tr>
-			{% for fav in favourites %}
-				{% if currentUser.id == fav.user_id %}
-					<tr>
-						<td>
-							<a href="/contacts/{{ fav.contact_id }}">{{ fav.contact_id }} {{ fav.contact.name }}</a>
-						</td>
-						<td>
-							<a id="btnDelete" href="/users/{{ currentUser.id }}/delete" class="btn btn-danger">Töröl</a>
-						</td>
-					</tr>
-				{% endif %}
-			{% endfor %}	
+	{% for fav in favourites %} 
+		{% if currentUser.id == fav.user_id %}
+			<tr>
+				<td>
+					<a href="/contacts/{{ fav.contact_id }}">{{ fav.contact_id }} {{ fav.contact.name }}</a>
+				</td>
+				<td>
+					<a href="/users/{{ currentUser.id }}/delete" class="btn btn-danger">Töröl</a>
+				</td>
+			</tr>
+		{% endif %} 
+	{% endfor %}
 </table>
 
 {% endblock %}
