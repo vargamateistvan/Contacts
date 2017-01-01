@@ -142,3 +142,24 @@ A https://github.com/vargamateistvan/Contacts/tree/master/design oldalon HTML fo
           2. 4444-es port pl.
 
           3. username és password beállítása
+
+4.Kliens oldali Javascript 
+
+1. popup_login.js: A felhasználó egy felugró ablakban jelentkezhet be
+2. delete.js: Ha a felhasználó a névjegy oldalon akarja törölni a névjegyet akkor egy felugró ablakban rákérdez, hogy biztosan akarja e
+
+5.Tesztelés
+
+Tesztelés Selenium segitségével (Contacts - Test Suite).
+
+Tesztesetek: 
+
+1. registration: Felhasználó regisztrálása
+2. login_logout: Bejelentkezés majd kilépés
+3. login: Bejelentkezés
+4. create: Új névjegy létrehozása
+5. edit: Névjegy szerkeztése
+6. delete: Névjegy törlése
+7. logout: kilépés
+8. wrong_create: Névjegy létrehozása hibás/hiányzó adatokkal
+9. delete_logout: Névjegy törlése, majd kilépés
